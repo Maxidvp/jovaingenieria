@@ -324,6 +324,17 @@ p { margin: 0 0 1em; }
   .founder__photo { position: relative; top: 0; max-width: 420px; }
 }
 
+/* Sin foto cargada: avatar chico con iniciales junto al texto, en lugar del recuadro grande */
+.member--nophoto, .member--nophoto.member--reverse { grid-template-columns: 112px minmax(0, 760px); gap: 36px; }
+.member--nophoto .founder__photo { order: 0; position: relative; top: 0; width: 112px; aspect-ratio: 1; }
+.member--nophoto .founder__photo figcaption { display: none; }
+.member--nophoto .founder__monogram { font-size: 2.6rem; color: #fff; }
+@media (max-width: 860px) {
+  .member--nophoto, .member--nophoto.member--reverse { grid-template-columns: 1fr; gap: 20px; }
+  .member--nophoto .founder__photo { width: 76px; }
+  .member--nophoto .founder__monogram { font-size: 1.9rem; }
+}
+
 /* ---------- Por qué ---------- */
 .reasons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
 .reason { padding: 0 28px 0 0; }
