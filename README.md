@@ -1,8 +1,8 @@
 # Jova Ingeniería: sitio web
 
 Sitio estático (HTML + CSS + JS, sin dependencias ni compilación) de **Jova Ingeniería**.
-Está orientado al perfil del socio fundador: ingeniería eléctrica, instrumentación y control (E&IC)
-para minería de litio, oil & gas, tratamiento de agua e industria.
+Está orientado al perfil del equipo: ingeniería eléctrica, instrumentación y control (E&IC) e ingeniería
+de procesos para minería de litio, oil & gas, tratamiento de agua e industria.
 
 ## Estructura
 
@@ -17,12 +17,12 @@ assets/img/           Imágenes (ver assets/img/README.md)
 
 ## Secciones
 
-1. **Hero**: propuesta de valor E&IC, diagrama unifilar animado e indicadores (+25 años, U$D 1.100M+, 3 plantas de litio, 7 países).
+1. **Hero**: propuesta de valor, diagrama unifilar animado e indicadores (+25 años, U$D 1.100M+, 5 plantas de litio, 7 países).
 2. **Experiencia**: empresas para las que trabajó el director.
-3. **Servicios**: ingeniería eléctrica, I&C, VFD/soft starters, comisionado, gestión de proyectos y asesoría a empresas internacionales.
+3. **Servicios**: ingeniería eléctrica, I&C, VFD/soft starters, ingeniería de procesos, comisionado, operación y mejora continua, gestión de proyectos y asesoría a empresas internacionales.
 4. **Sectores**: litio, oil & gas, agua, industria y energía.
 5. **Trayectoria**: proyectos en los que participó el equipo, filtrables por sector.
-6. **Fundador**: perfil del Ing. Carlos Federico Flores.
+6. **Equipo**: Ing. Carlos Federico Flores (socio fundador, E&IC) e Ing. Domingo Eduardo Bobó (procesos y litio).
 7. **Por qué Jova**, **Suministros**, **Contacto**.
 
 ## Idiomas
@@ -33,7 +33,7 @@ assets/img/           Imágenes (ver assets/img/README.md)
   No redirige si el visitante eligió un idioma, si navega dentro del sitio ni si es un buscador.
 - Las etiquetas `hreflang` le indican a Google qué versión mostrar en cada idioma.
 - **Al cambiar un texto, actualizar las dos páginas** (`index.html` y `en/index.html`). Las secciones
-  tienen ids distintos en cada idioma (`#servicios` / `#services`, etc.); la equivalencia está en `assets/js/main.js`.
+  tienen ids distintos en cada idioma (`#servicios` / `#services`, `#equipo` / `#team`, etc.); la equivalencia está en `assets/js/main.js`.
 
 ## Ver en local
 

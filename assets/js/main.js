@@ -30,7 +30,7 @@
   // Equivalencia de secciones entre idiomas, para conservar la posición al cambiar
   var SECTION_MAP = {
     inicio: 'home', servicios: 'services', sectores: 'sectors', trayectoria: 'track-record',
-    fundador: 'founder', 'por-que': 'why-jova', suministros: 'supplies', contacto: 'contact'
+    equipo: 'team', 'por-que': 'why-jova', suministros: 'supplies', contacto: 'contact'
   };
 
   // Selector de idioma: guarda la elección y mantiene la sección actual
@@ -85,7 +85,7 @@
   }
 
   // Aparición progresiva
-  var revealTargets = document.querySelectorAll('.section__head, .service, .sector, .project, .reason, .supplies li, .founder__copy, .founder__photo, .form');
+  var revealTargets = document.querySelectorAll('.section__head, .service, .sector, .project, .reason, .supplies li, .member__copy, .founder__photo, .form');
   if ('IntersectionObserver' in window && !reduceMotion) {
     var revealer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
