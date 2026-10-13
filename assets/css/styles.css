@@ -248,11 +248,10 @@ p { margin: 0 0 1em; }
   content: ""; position: absolute; inset: 0; z-index: -2;
   background-image: repeating-linear-gradient(135deg, rgba(255,255,255,.025) 0 1px, transparent 1px 14px);
 }
-.sector__body { padding: 28px 24px; transition: transform .35s var(--ease); }
+.sector__body { padding: 28px 24px; }
 .sector__tag { color: var(--accent); font-size: .68rem; display: block; margin-bottom: 10px; }
 .sector h3 { font-size: 1.9rem; text-transform: uppercase; margin-bottom: .6rem; }
 .sector p { color: var(--steel-2); font-size: .98rem; margin: 0; }
-.sector:hover .sector__body { transform: translateY(-6px); }
 
 @media (max-width: 1080px) { .sectors { grid-template-columns: repeat(2, 1fr); } .sector { min-height: 340px; } }
 @media (max-width: 560px) { .sectors { grid-template-columns: 1fr; } .sector { min-height: 280px; } }
@@ -272,9 +271,9 @@ p { margin: 0 0 1em; }
   position: relative; isolation: isolate; display: grid; grid-template-columns: 150px 1fr auto; gap: 24px; align-items: center;
   padding: 26px 0; border-bottom: 1px solid var(--line);
 }
-/* Fondo al pasar el mouse: se dibuja por fuera de la fila para que el texto no se mueva */
+/* Fondo al pasar el mouse: ocupa exactamente la fila y no mueve el texto */
 .project::before {
-  content: ""; position: absolute; inset: 0 -16px; z-index: -1;
+  content: ""; position: absolute; inset: 0; z-index: -1;
   background: var(--paper); opacity: 0; transition: opacity .2s;
 }
 .project:hover::before { opacity: 1; }
@@ -345,9 +344,9 @@ p { margin: 0 0 1em; }
 .supplies { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .supplies li {
   background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 24px 26px;
-  display: flex; flex-direction: column; gap: 6px; transition: border-color .2s, transform .2s var(--ease);
+  display: flex; flex-direction: column; gap: 6px; transition: border-color .2s;
 }
-.supplies li:hover { border-color: var(--accent); transform: translateY(-2px); }
+.supplies li:hover { border-color: var(--accent); }
 .supplies .supplies__n { color: var(--accent); font-size: .72rem; margin-bottom: 4px; }
 .supplies strong { font-family: var(--font-head); font-size: 1.35rem; text-transform: uppercase; font-weight: 700; }
 .supplies span { color: var(--muted); font-size: .97rem; }
