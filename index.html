@@ -13,6 +13,42 @@
   <meta property="og:url" content="https://jovaingenieria.com.ar/">
   <meta property="og:image" content="https://jovaingenieria.com.ar/assets/img/og-image.jpg">
   <meta property="og:locale" content="es_AR">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <link rel="canonical" href="https://jovaingenieria.com.ar/">
+  <link rel="alternate" hreflang="es" href="https://jovaingenieria.com.ar/">
+  <link rel="alternate" hreflang="en" href="https://jovaingenieria.com.ar/en/">
+  <link rel="alternate" hreflang="x-default" href="https://jovaingenieria.com.ar/en/">
+
+  <!-- Idioma: si el visitante llega de afuera y su navegador no está en español, pasa a /en/.
+       Respeta la elección guardada con el selector ES | EN y no actúa con buscadores. -->
+  <script>
+  (function () {
+    try {
+      var saved = null;
+      try { saved = localStorage.getItem('jova-lang'); } catch (e) {}
+      var goEn = saved === 'en';
+      if (!saved) {
+        var bot = /bot|crawl|spider|slurp|lighthouse|headless|preview/i.test(navigator.userAgent);
+        var internal = document.referrer && document.referrer.indexOf(location.origin) === 0;
+        var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        var pref = 'en';
+        for (var i = 0; i < langs.length; i++) {
+          var l = String(langs[i]).toLowerCase();
+          if (l.indexOf('es') === 0) { pref = 'es'; break; }
+          if (l.indexOf('en') === 0) { pref = 'en'; break; }
+        }
+        goEn = !bot && !internal && pref === 'en';
+      }
+      if (goEn) {
+        var map = { inicio: 'home', servicios: 'services', sectores: 'sectors', trayectoria: 'track-record',
+                    fundador: 'founder', 'por-que': 'why-jova', suministros: 'supplies', contacto: 'contact' };
+        var h = location.hash.slice(1);
+        location.replace('en/' + (h ? '#' + (map[h] || h) : ''));
+      }
+    } catch (e) {}
+  })();
+  </script>
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/barlow-condensed-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -66,6 +102,11 @@
       <a href="#suministros">Suministros</a>
       <a href="#contacto" class="btn btn--accent btn--sm nav__cta">Solicitar propuesta</a>
     </nav>
+
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <a href="./" lang="es" hreflang="es" data-lang="es" aria-current="page">ES</a>
+      <a href="en/" lang="en" hreflang="en" data-lang="en">EN</a>
+    </div>
 
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
       <span></span><span></span><span></span>

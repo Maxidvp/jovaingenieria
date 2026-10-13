@@ -3,6 +3,51 @@
 
   var CONTACT_EMAIL = 'info@jovaingenieria.com.ar';
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var LANG = document.documentElement.lang.indexOf('en') === 0 ? 'en' : 'es';
+
+  // Textos que genera el script, en ambos idiomas
+  var TEXT = {
+    es: {
+      locale: 'es-AR',
+      openMenu: 'Abrir menú',
+      closeMenu: 'Cerrar menú',
+      invalid: 'Revise los campos marcados.',
+      opening: 'Abriendo su correo para enviar la consulta…',
+      subject: 'Consulta web: ',
+      name: 'Nombre', company: 'Empresa', email: 'Email', phone: 'Teléfono', type: 'Tipo de proyecto'
+    },
+    en: {
+      locale: 'en-US',
+      openMenu: 'Open menu',
+      closeMenu: 'Close menu',
+      invalid: 'Please check the highlighted fields.',
+      opening: 'Opening your email app to send the inquiry…',
+      subject: 'Website inquiry: ',
+      name: 'Name', company: 'Company', email: 'Email', phone: 'Phone', type: 'Project type'
+    }
+  }[LANG];
+
+  // Equivalencia de secciones entre idiomas, para conservar la posición al cambiar
+  var SECTION_MAP = {
+    inicio: 'home', servicios: 'services', sectores: 'sectors', trayectoria: 'track-record',
+    fundador: 'founder', 'por-que': 'why-jova', suministros: 'supplies', contacto: 'contact'
+  };
+
+  // Selector de idioma: guarda la elección y mantiene la sección actual
+  document.querySelectorAll('[data-lang]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var target = link.dataset.lang;
+      try { localStorage.setItem('jova-lang', target); } catch (e) { /* almacenamiento no disponible */ }
+      var hash = location.hash.slice(1);
+      if (!hash) return;
+      var mapped = hash;
+      Object.keys(SECTION_MAP).forEach(function (es) {
+        if (target === 'en' && hash === es) mapped = SECTION_MAP[es];
+        if (target === 'es' && hash === SECTION_MAP[es]) mapped = es;
+      });
+      link.href = link.href.split('#')[0] + '#' + mapped;
+    });
+  });
 
   // Header con fondo al hacer scroll
   var header = document.getElementById('header');
@@ -16,7 +61,7 @@
   function setMenu(open) {
     nav.classList.toggle('is-open', open);
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    toggle.setAttribute('aria-label', open ? TEXT.closeMenu : TEXT.openMenu);
   }
   toggle.addEventListener('click', function () { setMenu(!nav.classList.contains('is-open')); });
   nav.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
@@ -54,7 +99,7 @@
   }
 
   // Contadores de indicadores
-  var formatter = new Intl.NumberFormat('es-AR');
+  var formatter = new Intl.NumberFormat(TEXT.locale);
   function renderCount(el, value) {
     el.textContent = (el.dataset.prefix || '') + formatter.format(value) + (el.dataset.suffix || '');
   }
@@ -110,22 +155,22 @@
       if (!ok) valid = false;
     });
     if (!valid) {
-      status.textContent = 'Revise los campos marcados.';
+      status.textContent = TEXT.invalid;
       return;
     }
     var d = new FormData(form);
-    var subject = 'Consulta web: ' + d.get('tipo') + (d.get('empresa') ? ' — ' + d.get('empresa') : '');
+    var subject = TEXT.subject + d.get('tipo') + (d.get('empresa') ? ' — ' + d.get('empresa') : '');
     var body = [
-      'Nombre: ' + d.get('nombre'),
-      'Empresa: ' + (d.get('empresa') || '-'),
-      'Email: ' + d.get('email'),
-      'Teléfono: ' + (d.get('telefono') || '-'),
-      'Tipo de proyecto: ' + d.get('tipo'),
+      TEXT.name + ': ' + d.get('nombre'),
+      TEXT.company + ': ' + (d.get('empresa') || '-'),
+      TEXT.email + ': ' + d.get('email'),
+      TEXT.phone + ': ' + (d.get('telefono') || '-'),
+      TEXT.type + ': ' + d.get('tipo'),
       '',
       d.get('mensaje')
     ].join('\n');
     window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    status.textContent = 'Abriendo su correo para enviar la consulta…';
+    status.textContent = TEXT.opening;
   });
 
   document.getElementById('year').textContent = new Date().getFullYear();
