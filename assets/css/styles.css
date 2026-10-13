@@ -36,7 +36,7 @@
   --container: 1200px;
   --gutter: clamp(16px, 4vw, 40px);
   --radius: 4px;
-  --header-h: 76px;
+  --header-h: 84px;
   --ease: cubic-bezier(.2, .7, .2, 1);
 }
 
@@ -90,25 +90,26 @@ p { margin: 0 0 1em; }
 .eyebrow--light { color: var(--steel-2); }
 .eyebrow .dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(232,89,26,.2); }
 
-/* ---------- Header ---------- */
+/* ---------- Header (blanco, para el logo en sus colores originales) ---------- */
 .header {
   position: fixed; inset: 0 0 auto; z-index: 50; height: var(--header-h);
-  background: rgba(10, 15, 26, .0); transition: background .3s, box-shadow .3s, height .3s;
+  background: var(--white); border-bottom: 1px solid var(--line); transition: box-shadow .3s;
 }
-.header.is-scrolled { background: rgba(10, 15, 26, .92); backdrop-filter: blur(10px); box-shadow: 0 1px 0 var(--line-dark); }
+.header.is-scrolled { box-shadow: 0 6px 24px rgba(10, 15, 26, .08); }
 .header__inner { height: 100%; display: flex; align-items: center; gap: 24px; }
-.brand img { height: 36px; width: auto; }
+.brand { display: block; flex-shrink: 0; }
+.brand .logo { height: 58px; }
 
 .nav { display: flex; align-items: center; gap: 30px; margin-left: auto; }
 .nav a:not(.btn) {
-  color: var(--steel-2); text-decoration: none; font-weight: 500; font-size: .95rem; position: relative; padding: 4px 0;
+  color: var(--muted); text-decoration: none; font-weight: 500; font-size: .95rem; position: relative; padding: 4px 0;
   transition: color .2s;
 }
 .nav a:not(.btn)::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: var(--accent);
   transform: scaleX(0); transform-origin: left; transition: transform .25s var(--ease);
 }
-.nav a:not(.btn):hover, .nav a.is-active { color: #fff; }
+.nav a:not(.btn):hover, .nav a.is-active { color: var(--text); }
 .nav a:not(.btn):hover::after, .nav a.is-active::after { transform: scaleX(1); }
 
 .nav-toggle { display: none; background: none; border: 0; width: 44px; height: 44px; padding: 10px; cursor: pointer; }
@@ -116,15 +117,15 @@ p { margin: 0 0 1em; }
 /* Selector de idioma */
 .lang {
   display: flex; align-items: center; gap: 2px; padding: 3px 3px 3px 10px; flex-shrink: 0;
-  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.4); border-radius: 999px;
+  background: var(--paper); border: 1px solid #C9CFD9; border-radius: 999px;
   font-family: var(--font-mono); font-size: .78rem; font-weight: 500; letter-spacing: .08em;
 }
-.lang__icon { width: 16px; height: 16px; margin-right: 4px; fill: none; stroke: #fff; stroke-width: 1.6; }
-.lang a { color: #fff; text-decoration: none; padding: 6px 11px; border-radius: 999px; transition: background .2s, color .2s; }
-.lang a:hover { background: rgba(255,255,255,.14); }
+.lang__icon { width: 16px; height: 16px; margin-right: 4px; fill: none; stroke: var(--text); stroke-width: 1.6; }
+.lang a { color: var(--text); text-decoration: none; padding: 6px 11px; border-radius: 999px; transition: background .2s, color .2s; }
+.lang a:hover { background: var(--paper-2); }
 .lang a[aria-current="page"] { background: var(--accent); color: #fff; }
 @media (max-width: 1100px) { .lang { margin-left: auto; } }
-.nav-toggle span { display: block; height: 2px; background: #fff; margin: 6px 0; transition: transform .25s, opacity .25s; }
+.nav-toggle span { display: block; height: 2px; background: var(--text); margin: 6px 0; transition: transform .25s, opacity .25s; }
 .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
 .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
@@ -133,15 +134,16 @@ p { margin: 0 0 1em; }
   .nav-toggle { display: block; }
   .nav {
     position: fixed; inset: var(--header-h) 0 auto; flex-direction: column; align-items: stretch; gap: 0;
-    background: var(--ink); padding: 8px var(--gutter) 24px; border-top: 1px solid var(--line-dark);
+    background: var(--white); padding: 8px var(--gutter) 24px; border-bottom: 1px solid var(--line);
+    box-shadow: 0 16px 32px rgba(10, 15, 26, .12);
     transform: translateY(-8px); opacity: 0; visibility: hidden; transition: opacity .2s, transform .2s, visibility .2s;
   }
   .nav.is-open { transform: none; opacity: 1; visibility: visible; }
-  .nav a:not(.btn) { padding: 14px 0; border-bottom: 1px solid var(--line-dark); font-size: 1.05rem; }
+  .nav a:not(.btn) { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 1.05rem; color: var(--text); }
   .nav a:not(.btn)::after { display: none; }
   .nav__cta { margin-top: 18px; }
-  .header { background: rgba(10, 15, 26, .92); }
 }
+@media (max-width: 520px) { .brand .logo { height: 46px; } }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -396,14 +398,14 @@ p { margin: 0 0 1em; }
 @media (max-width: 520px) { .form__row { grid-template-columns: 1fr; } }
 
 /* ---------- Footer ---------- */
-.footer { background: #060A12; color: var(--steel); padding: 48px 0 32px; }
+.footer { background: var(--white); color: var(--muted); padding: 48px 0 32px; border-top: 1px solid var(--line); }
 .footer__inner { display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: start; }
-.footer__brand img { height: 34px; width: auto; margin-bottom: 14px; }
+.footer__brand .logo { height: 64px; margin-bottom: 18px; }
 .footer__brand p { max-width: 30em; margin: 0; font-size: .95rem; }
 .footer__nav { display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: flex-end; }
-.footer__nav a { text-decoration: none; color: var(--steel-2); font-size: .95rem; }
-.footer__nav a:hover { color: #fff; }
-.footer__legal { grid-column: 1 / -1; border-top: 1px solid var(--line-dark); padding-top: 22px; margin: 8px 0 0; font-size: .68rem; }
+.footer__nav a { text-decoration: none; color: var(--muted); font-size: .95rem; }
+.footer__nav a:hover { color: var(--accent); }
+.footer__legal { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 22px; margin: 8px 0 0; font-size: .68rem; }
 @media (max-width: 720px) { .footer__inner { grid-template-columns: 1fr; } .footer__nav { justify-content: flex-start; } }
 
 /* ---------- WhatsApp flotante ---------- */
@@ -420,11 +422,8 @@ p { margin: 0 0 1em; }
 .reveal.is-visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 
-/* ---------- Logo (SVG en línea para usar las fuentes del sitio) ---------- */
-.logo { height: 36px; width: auto; overflow: visible; }
-.logo__word { font-family: var(--font-head); font-weight: 700; font-size: 27px; letter-spacing: 2px; fill: #fff; }
-.logo__tag { font-family: var(--font-mono); font-size: 5.6px; letter-spacing: 1.3px; fill: var(--steel-2); }
-.footer__brand .logo { margin-bottom: 14px; }
+/* ---------- Logo ---------- */
+.logo { display: block; width: auto; }
 
 /* Símbolo de fondo en tarjetas de sector (puede quitarse al cargar fotos) */
 .sector__glyph {

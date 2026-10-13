@@ -12,7 +12,7 @@ en/index.html         Versión en inglés (/en/)
 assets/css/styles.css Estilos (paleta, tipografía, responsive)
 assets/js/main.js     Menú móvil, contadores, filtro de trayectoria, formulario
 assets/fonts/         Fuentes autoalojadas (Barlow, Barlow Condensed, IBM Plex Mono, licencia OFL)
-assets/img/           Imágenes (ver assets/img/README.md)
+assets/img/           Logo, favicon e imágenes (ver assets/img/README.md)
 ```
 
 ## Secciones
@@ -44,7 +44,6 @@ python3 -m http.server 8000
 
 ## Pendiente antes de publicar
 
-- [ ] Reemplazar el logo provisorio (SVG en línea en `index.html`, header y footer) por el logo vectorial oficial.
 - [ ] Cargar las fotos indicadas en `assets/img/README.md` (fundador, sectores, imagen para redes).
 - [ ] Validar con el Ing. Flores los datos públicos: montos, nombres de clientes y proyectos, y cifras del hero.
 - [ ] Formulario: hoy abre el correo del visitante (`mailto:`). Para recibir los mensajes directamente,
