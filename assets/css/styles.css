@@ -269,7 +269,7 @@ p { margin: 0 0 1em; }
 .timeline { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .project {
   position: relative; isolation: isolate; display: grid; grid-template-columns: 150px 1fr auto; gap: 24px; align-items: center;
-  padding: 26px 0; border-bottom: 1px solid var(--line);
+  padding: 26px 24px; border-bottom: 1px solid var(--line);
 }
 /* Fondo al pasar el mouse: ocupa exactamente la fila y no mueve el texto */
 .project::before {
@@ -287,7 +287,7 @@ p { margin: 0 0 1em; }
   background: var(--white);
 }
 @media (max-width: 720px) {
-  .project { grid-template-columns: 1fr; gap: 8px; }
+  .project { grid-template-columns: 1fr; gap: 8px; padding-inline: 0; }
   .project::before { display: none; }
   .project__value { justify-self: start; }
 }
