@@ -23,7 +23,7 @@ assets/img/           Imágenes (ver assets/img/README.md)
 4. **Sectores**: litio, oil & gas, agua, industria y energía.
 5. **Trayectoria**: proyectos en los que participó el equipo, filtrables por sector.
 6. **Equipo**: Ing. Carlos Federico Flores (socio fundador, E&IC) e Ing. Domingo Eduardo Bobó (procesos y litio).
-7. **Por qué Jova**, **Suministros**, **Contacto**.
+7. **Por qué Jova**, **Contratos y suministros** (administración de contratos y cadena de suministro para obras), **Contacto**.
 
 ## Idiomas
 
