@@ -21,7 +21,7 @@ assets/img/           Imágenes (ver assets/img/README.md)
 2. **Experiencia**: empresas para las que trabajó el director.
 3. **Servicios**: ingeniería eléctrica, I&C, VFD/soft starters, comisionado, gestión de proyectos y asesoría a empresas internacionales.
 4. **Sectores**: litio, oil & gas, agua, industria y energía.
-5. **Trayectoria**: proyectos del director, filtrables por sector.
+5. **Trayectoria**: proyectos en los que participó el equipo, filtrables por sector.
 6. **Fundador**: perfil del Ing. Carlos Federico Flores.
 7. **Por qué Jova**, **Suministros**, **Contacto**.
 
