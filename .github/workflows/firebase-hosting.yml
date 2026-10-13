@@ -1,0 +1,36 @@
+# Publica el sitio en Firebase Hosting en cada push.
+# Requiere (una sola vez):
+#   - Secreto del repo FIREBASE_SERVICE_ACCOUNT con el JSON de la cuenta de servicio.
+#   - Archivo .firebaserc con el ID del proyecto.
+# Mientras falte alguno de los dos, el deploy se saltea sin marcar error.
+name: Deploy a Firebase Hosting
+
+on:
+  push:
+    branches: [main, claude/cool-lovelace-pe5zou]
+  workflow_dispatch:
+
+concurrency:
+  group: firebase-hosting
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verificar configuración
+        run: |
+          if [ -z "$FIREBASE_SERVICE_ACCOUNT" ]; then echo "::notice::Falta el secreto FIREBASE_SERVICE_ACCOUNT; se omite el deploy."; fi
+          if [ ! -f .firebaserc ]; then echo "::notice::Falta .firebaserc con el ID del proyecto; se omite el deploy."; fi
+
+      - name: Deploy
+        if: ${{ env.FIREBASE_SERVICE_ACCOUNT != '' && hashFiles('.firebaserc') != '' }}
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          channelId: live
