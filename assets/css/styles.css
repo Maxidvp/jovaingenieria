@@ -279,10 +279,15 @@ p { margin: 0 0 1em; }
 
 .timeline { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .project {
-  display: grid; grid-template-columns: 150px 1fr auto; gap: 24px; align-items: center;
-  padding: 26px 0; border-bottom: 1px solid var(--line); transition: background .2s, padding .25s var(--ease);
+  position: relative; isolation: isolate; display: grid; grid-template-columns: 150px 1fr auto; gap: 24px; align-items: center;
+  padding: 26px 0; border-bottom: 1px solid var(--line);
 }
-.project:hover { background: var(--paper); padding-inline: 16px; }
+/* Fondo al pasar el mouse: se dibuja por fuera de la fila para que el texto no se mueva */
+.project::before {
+  content: ""; position: absolute; inset: 0 -16px; z-index: -1;
+  background: var(--paper); opacity: 0; transition: opacity .2s;
+}
+.project:hover::before { opacity: 1; }
 .project.is-hidden { display: none; }
 .project__year { color: var(--accent); font-size: .82rem; }
 .project h3 { font-size: 1.5rem; text-transform: uppercase; margin-bottom: .3rem; }
@@ -294,7 +299,7 @@ p { margin: 0 0 1em; }
 }
 @media (max-width: 720px) {
   .project { grid-template-columns: 1fr; gap: 8px; }
-  .project:hover { padding-inline: 0; background: none; }
+  .project::before { display: none; }
   .project__value { justify-self: start; }
 }
 
