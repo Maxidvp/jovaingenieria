@@ -44,3 +44,19 @@ python3 -m http.server 8000
 
 Al ser estático, se puede subir tal cual a cualquier hosting (cPanel/FTP del hosting actual, Netlify,
 Vercel, Cloudflare Pages o GitHub Pages) y apuntar `jovaingenieria.com.ar` al servidor.
+
+### Firebase Hosting
+
+El repo incluye `firebase.json` (publica la raíz, excluye los `.md` y cachea fuentes e imágenes).
+
+```bash
+npm install -g firebase-tools
+firebase login
+firebase use --add            # elegir el proyecto creado en console.firebase.google.com
+firebase deploy --only hosting
+# Link temporal para mostrar cambios sin tocar el sitio principal (vence a los 7 días):
+firebase hosting:channel:deploy preview
+```
+
+Para que se publique solo en cada push: `firebase init hosting:github`
+(crea el workflow de GitHub Actions y el secreto con la cuenta de servicio).
