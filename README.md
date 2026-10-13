@@ -57,7 +57,7 @@ Vercel, Cloudflare Pages o GitHub Pages) y apuntar `jovaingenieria.com.ar` al se
 
 ### Firebase Hosting
 
-El repo incluye `firebase.json` (publica la raíz, excluye los `.md` y cachea fuentes e imágenes).
+El repo incluye `firebase.json`: publica la raíz y excluye los `.md`. Las fuentes y las imágenes se guardan en caché, mientras que el HTML, el CSS y el JS se revalidan en cada visita para que los cambios se vean enseguida.
 
 ```bash
 npm install -g firebase-tools
