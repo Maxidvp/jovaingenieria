@@ -22,7 +22,7 @@ assets/img/           Logo, favicon e imágenes (ver assets/img/README.md)
 3. **Servicios**: ingeniería eléctrica, I&C, ingeniería de detalle y modelado BIM, VFD/soft starters, ingeniería de procesos, comisionado, operación y mejora continua, gestión de proyectos y asesoría a empresas internacionales, más la franja de herramientas que maneja el equipo.
 4. **Sectores**: litio, oil & gas, agua, industria y energía.
 5. **Trayectoria**: proyectos en los que participó el equipo, filtrables por sector.
-6. **Equipo**: Ing. Carlos Federico Flores (socio fundador, E&IC) e Ing. Domingo Eduardo Bobó (procesos y litio).
+6. **Quién dirige**: perfil del Ing. Carlos Federico Flores, socio fundador.
 7. **Por qué Jova**, **Contratos y suministros** (administración de contratos y cadena de suministro para obras),
    **Representación Aquatech** (plataforma PEARL para litio, según la presentación de Panorama Minero 2026) y **Contacto**.
 

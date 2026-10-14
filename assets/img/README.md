@@ -20,8 +20,7 @@ Conviene cargarlas en formato `.jpg` optimizado (calidad ~80, menos de 300 KB ca
 
 | Archivo                 | Dónde se usa                  | Tamaño sugerido | Contenido ideal |
 |-------------------------|-------------------------------|-----------------|-----------------|
-| `fundador.jpg`          | Sección "Equipo"              | 1120 × 1400 (4:5) | Retrato profesional del Ing. Flores, idealmente en planta u obra con EPP |
-| `domingo-bobo.jpg`      | Sección "Equipo"              | 1120 × 1400 (4:5) | Retrato profesional del Ing. Bobó, mismo estilo que el anterior |
+| `fundador.jpg`          | Sección "Quién dirige"           | 1120 × 1400 (4:5) | Retrato profesional del Ing. Flores, idealmente en planta u obra con EPP |
 | `sector-litio.jpg`      | Tarjeta "Minería de litio"    | 800 × 1100      | Salar / planta de carbonato de litio en la Puna |
 | `sector-oilgas.jpg`     | Tarjeta "Oil & Gas"           | 800 × 1100      | Planta de gas, compresión o instalación offshore |
 | `sector-agua.jpg`       | Tarjeta "Tratamiento de agua" | 800 × 1100      | Planta de tratamiento, bombas, piping |
