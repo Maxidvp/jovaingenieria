@@ -224,7 +224,7 @@ p { margin: 0 0 1em; }
 .section__head--row > .section__lead { max-width: 28em; }
 
 /* ---------- Servicios ---------- */
-.services { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.services { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .service {
   position: relative; padding: 34px 26px 38px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
   transition: background .25s;

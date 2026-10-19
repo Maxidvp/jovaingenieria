@@ -19,7 +19,7 @@ assets/img/           Logo, favicon e imágenes (ver assets/img/README.md)
 
 1. **Hero**: propuesta de valor, diagrama unifilar animado e indicadores (+25 años, U$D 1.100M+, 5 plantas de litio, 7 países).
 2. **Experiencia**: empresas para las que trabajó el director.
-3. **Servicios**: ingeniería eléctrica, I&C, ingeniería de detalle y modelado BIM, VFD/soft starters, ingeniería de procesos, comisionado, operación y mejora continua, gestión de proyectos y asesoría a empresas internacionales, más la franja de herramientas que maneja el equipo.
+3. **Servicios**: ingeniería eléctrica (incluye salas eléctricas y VFD/soft starters), I&C, ingeniería de detalle y modelado BIM, ingeniería de procesos, comisionado, operación y mejora continua, gestión de proyectos y asesoría a empresas internacionales, más la franja de herramientas que maneja el equipo.
 4. **Sectores**: litio, oil & gas, agua, industria y energía.
 5. **Trayectoria**: proyectos en los que participó el equipo, filtrables por sector.
 6. **Quién dirige**: perfil del Ing. Carlos Federico Flores, socio fundador.
