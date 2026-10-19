@@ -165,7 +165,14 @@ p { margin: 0 0 1em; }
 .hero__lead { font-size: clamp(1.05rem, 1.4vw, 1.2rem); color: var(--steel-2); max-width: 36em; }
 .hero__lead strong { color: #fff; font-weight: 600; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 14px; margin: 2rem 0 1.6rem; }
-.hero__note { color: var(--steel); }
+.hero__note { color: var(--steel-2); line-height: 1.9; }
+.hero__note strong { color: var(--accent); font-weight: 500; margin-right: .8em; }
+.hero__note span { display: inline-block; white-space: nowrap; }
+.hero__note span + span::before { content: "·"; margin: 0 .7em; color: var(--steel); }
+@media (max-width: 720px) {
+  .hero__note strong, .hero__note span { display: block; }
+  .hero__note span + span::before { content: none; }
+}
 
 
 /* Indicadores */
