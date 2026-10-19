@@ -23,8 +23,8 @@ assets/img/           Logo, favicon e imágenes (ver assets/img/README.md)
 4. **Sectores**: litio, oil & gas, agua, industria y energía.
 5. **Trayectoria**: proyectos en los que participó el equipo, filtrables por sector.
 6. **Quién dirige**: perfil del Ing. Carlos Federico Flores, socio fundador.
-7. **Por qué Jova**, **Contratos y suministros** (administración de contratos y cadena de suministro para obras),
-   **Representación Aquatech** (plataforma PEARL para litio, según la presentación de Panorama Minero 2026) y **Contacto**.
+7. **Contratos y suministros** (administración de contratos y cadena de suministro para obras),
+   **Representación Aquatech** (soluciones de agua, ZLD y minerales críticos, con la plataforma PEARL para litio) y **Contacto**.
 
 ## Idiomas
 

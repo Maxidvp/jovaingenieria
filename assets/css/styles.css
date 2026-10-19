@@ -379,6 +379,20 @@ p { margin: 0 0 1em; }
 @media (max-width: 560px) { .supplies { grid-template-columns: 1fr; } }
 
 /* ---------- Representación Aquatech ---------- */
+.aq-solutions { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.aq-solutions li { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 24px 26px; display: flex; flex-direction: column; gap: 8px; }
+.aq-solutions strong { font-family: var(--font-head); font-size: 1.35rem; text-transform: uppercase; font-weight: 700; }
+.aq-solutions span { color: var(--muted); font-size: .97rem; }
+.aq-industries { margin: 24px 0 0; color: var(--muted); line-height: 2; }
+.aq-industries strong { color: var(--accent); font-weight: 500; margin-right: .8em; }
+.aq-industries span { display: inline-block; white-space: nowrap; }
+.aq-industries span + span::before { content: "·"; margin: 0 .7em; color: var(--steel); }
+.aq-sub { margin: clamp(48px, 7vw, 80px) 0 28px; padding-top: clamp(40px, 6vw, 64px); border-top: 1px solid var(--line); }
+.aq-sub > * { max-width: 760px; }
+.aq-sub h3 { font-size: clamp(1.6rem, 2.6vw, 2.2rem); text-transform: uppercase; margin-bottom: .8rem; }
+.aq-sub p { color: var(--muted); margin: 0; font-size: 1.05rem; }
+@media (max-width: 960px) { .aq-solutions { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .aq-solutions { grid-template-columns: 1fr; } }
 .tech { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .tech__step { border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 28px 32px; display: flex; flex-direction: column; }
 .tech__n { color: var(--accent); margin: 0 0 14px; }
