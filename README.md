@@ -1,8 +1,8 @@
 # Jova Ingeniería: sitio web
 
 Sitio estático (HTML + CSS + JS, sin dependencias ni compilación) de **Jova Ingeniería**.
-Está orientado al perfil del equipo: ingeniería eléctrica, instrumentación y control (E&IC) e ingeniería
-de procesos para minería de litio, oil & gas, tratamiento de agua e industria.
+Presenta a la empresa como ingeniería integral, con todas las disciplinas y de la prefactibilidad a la
+puesta en marcha, para minería de litio, oil & gas, tratamiento de agua e industria.
 
 ## Estructura
 
