@@ -1,30 +1,37 @@
 # Jova Ingeniería: sitio web
 
-Sitio estático (HTML + CSS + JS, sin dependencias ni compilación) de **Jova Ingeniería**.
+Sitio estático (HTML + CSS + JS, sin dependencias ni compilación) de **Jova Ingeniería**, en español e inglés,
+publicado en https://jovaingenieria.com.ar.
 Presenta a la empresa como ingeniería integral, con todas las disciplinas y de la prefactibilidad a la
 puesta en marcha, para minería de litio, oil & gas, tratamiento de agua e industria.
 
 ## Estructura
 
 ```
-index.html            Versión en español (raíz del sitio)
-en/index.html         Versión en inglés (/en/)
-assets/css/styles.css Estilos (paleta, tipografía, responsive)
-assets/js/main.js     Menú móvil, contadores, filtro de trayectoria, formulario
-assets/fonts/         Fuentes autoalojadas (Barlow, Barlow Condensed, IBM Plex Mono, licencia OFL)
-assets/img/           Logo, favicon e imágenes (ver assets/img/README.md)
+index.html                        Versión en español (raíz del sitio)
+en/index.html                     Versión en inglés (/en/)
+assets/css/styles.css             Estilos (paleta, tipografía, responsive)
+assets/js/main.js                 Menú móvil, idioma, contadores, filtro de trayectoria, formulario
+assets/fonts/                     Fuentes autoalojadas (Barlow, Barlow Condensed, IBM Plex Mono, licencia OFL)
+assets/img/                       Logo, favicon, foto del fundador e imagen para redes (ver assets/img/README.md)
+assets/img/companies/             Logos de clientes ya procesados; los originales y el script, en originales/
 ```
 
 ## Secciones
 
-1. **Hero**: propuesta de valor, diagrama unifilar animado e indicadores (+25 años, U$D 1.100M+, 5 plantas de litio, 7 países).
-2. **Experiencia**: empresas para las que trabajó el director.
-3. **Servicios**: ingeniería eléctrica (incluye salas eléctricas y VFD/soft starters), I&C, ingeniería de detalle y modelado BIM, ingeniería de procesos, comisionado, operación y mejora continua, gestión de proyectos y asesoría a empresas internacionales, más la franja de herramientas que maneja el equipo.
-4. **Sectores**: litio, oil & gas, agua, industria y energía.
-5. **Trayectoria**: proyectos en los que participó el equipo, filtrables por sector.
-6. **Quién dirige**: perfil del Ing. Carlos Federico Flores, socio fundador.
-7. **Contratos y suministros** (administración de contratos y cadena de suministro para obras),
-   **Representación Aquatech** (soluciones de agua, ZLD y minerales críticos, con la plataforma PEARL para litio) y **Contacto**.
+1. **Portada**: propuesta de valor, bases operativas (Salta, Bahía Blanca, Hernandarias y Houston) e indicadores
+   (+25 años, U$D 9.000M+ en proyectos, 5 plantas de litio en la Puna, 9 países en 5 continentes).
+2. **Experiencia en proyectos para**: banda con los logos de las empresas para las que trabajó el equipo.
+3. **01 Servicios**: ingeniería eléctrica, instrumentación y control, ingeniería de detalle y modelado BIM,
+   procesos, comisionado y puesta en marcha, operación y mejora continua, supervisión y gestión de proyectos,
+   y asesoría para empresas internacionales, más la franja de herramientas que maneja el equipo.
+4. **02 Sectores**: litio, oil & gas, agua, industria y energía.
+5. **03 Trayectoria**: 18 proyectos en los que participó el equipo, filtrables por sector.
+6. **04 Quién dirige**: perfil del Ing. Carlos Federico Flores, socio fundador.
+7. **05 Contratos y suministros**: administración de contratos y cadena de suministro para obras.
+8. **06 Representación Aquatech**: representación en Argentina y Paraguay (desalinización, reúso, ZLD,
+   agua de producción, agua ultrapura, litio y minerales críticos).
+9. **07 Contacto**: WhatsApp, teléfonos, correos y formulario. El botón flotante de WhatsApp acompaña todo el recorrido.
 
 ## Idiomas
 
@@ -35,38 +42,3 @@ assets/img/           Logo, favicon e imágenes (ver assets/img/README.md)
 - Las etiquetas `hreflang` le indican a Google qué versión mostrar en cada idioma.
 - **Al cambiar un texto, actualizar las dos páginas** (`index.html` y `en/index.html`). Las secciones
   tienen ids distintos en cada idioma (`#servicios` / `#services`, `#equipo` / `#team`, etc.); la equivalencia está en `assets/js/main.js`.
-
-## Ver en local
-
-```bash
-python3 -m http.server 8000
-# abrir http://localhost:8000
-```
-
-## Pendiente antes de publicar
-
-- [ ] Cargar las fotos indicadas en `assets/img/README.md` (fundador, sectores, imagen para redes).
-- [ ] Validar con el Ing. Flores los datos públicos: montos, nombres de clientes y proyectos, y cifras del hero.
-- [ ] Formulario: hoy abre el correo del visitante (`mailto:`). Para recibir los mensajes directamente,
-      conectar un servicio como Formspree o un endpoint propio (ver `assets/js/main.js`).
-
-## Publicación
-
-Al ser estático, se puede subir tal cual a cualquier hosting (cPanel/FTP del hosting actual, Netlify,
-Vercel, Cloudflare Pages o GitHub Pages) y apuntar `jovaingenieria.com.ar` al servidor.
-
-### Firebase Hosting
-
-El repo incluye `firebase.json`: publica la raíz y excluye los `.md`. Las fuentes y las imágenes se guardan en caché, mientras que el HTML, el CSS y el JS se revalidan en cada visita para que los cambios se vean enseguida.
-
-```bash
-npm install -g firebase-tools
-firebase login
-firebase use --add            # elegir el proyecto creado en console.firebase.google.com
-firebase deploy --only hosting
-# Link temporal para mostrar cambios sin tocar el sitio principal (vence a los 7 días):
-firebase hosting:channel:deploy preview
-```
-
-Para que se publique solo en cada push: `firebase init hosting:github`
-(crea el workflow de GitHub Actions y el secreto con la cuenta de servicio).
