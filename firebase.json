@@ -6,6 +6,7 @@
       ".firebaserc",
       "**/.*",
       "**/*.md",
+      "assets/img/companies/originales/**",
       "**/node_modules/**"
     ],
     "cleanUrls": true,

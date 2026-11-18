@@ -13,6 +13,18 @@ El logotipo "JOVA" y la llama salen de los vectores del archivo de CorelDRAW (`L
 "Engineering & Consulting" y "GROUP" están convertidos a curvas con News Cycle (versión libre de News Gothic,
 la fuente original), ajustados a la disposición del logo de referencia.
 
+## Logos de clientes (`companies/`)
+
+Banda "Experiencia en proyectos para" / "Project experience with". Cada logo es una silueta blanca
+sobre fondo transparente, en un lienzo común de 400 × 160 px (se muestra a 200 × 80), recortado y escalado
+para que todos tengan un peso visual parecido. Los originales en color están en `companies/originales/`
+junto con `procesar-logos.py`, que regenera los PNG.
+
+- **Exar**: se quitó el lema "Litio que moviliza al mundo" (ilegible a ese tamaño).
+- **Zijin**: se quitó "Serbia Zijin Mining", porque el proyecto fue en Argentina.
+- **McDermott**: se agregó "J. RAY McDERMOTT" en Barlow Condensed al lado del emblema, porque el nombre
+  dentro del círculo no se lee a la altura de la banda.
+
 ## Fotos
 
 Si falta alguna imagen, el sitio muestra un fondo técnico de reemplazo, así que se puede publicar sin ellas.
@@ -26,5 +38,5 @@ Conviene cargarlas en formato `.jpg` optimizado (calidad ~80, menos de 300 KB ca
 | `sector-agua.jpg`       | Tarjeta "Tratamiento de agua" | 800 × 1100      | Planta de tratamiento, bombas, piping |
 | `sector-industria.jpg`  | Tarjeta "Industria y energía" | 800 × 1100      | Tableros, CCM, grupo electrógeno (las fotos del sitio actual sirven) |
 
-Usar solo fotos propias o con permiso. Evitar mostrar logos de clientes sin autorización.
+Usar solo fotos propias o con permiso.
 Al cargar las fotos de sectores se puede borrar el `<span class="sector__glyph">` de cada tarjeta.

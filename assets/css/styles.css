@@ -202,14 +202,18 @@ p { margin: 0 0 1em; }
 }
 
 /* ---------- Banda de experiencia ---------- */
-.trust { background: var(--navy); color: var(--steel-2); padding: 34px 0; border-top: 1px solid var(--line-dark); }
-.trust__title { color: var(--steel); text-align: center; margin-bottom: 18px; }
+.trust { background: var(--navy); color: var(--steel-2); padding: 34px 0 30px; border-top: 1px solid var(--line-dark); }
+.trust__title { color: var(--steel); text-align: center; margin-bottom: 14px; }
+/* Logos: siluetas blancas en un lienzo común de 200 x 80 (ver assets/img/companies/originales) */
 .trust__list {
-  list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 36px;
-  font-family: var(--font-head); font-weight: 600; font-size: 1.3rem; letter-spacing: .04em; text-transform: uppercase;
+  list-style: none; margin: 0 auto; padding: 0; max-width: 1140px;
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px 12px; justify-items: center;
 }
-.trust__list li { opacity: .75; transition: opacity .2s; }
-.trust__list li:hover { opacity: 1; color: #fff; }
+.trust__list li { width: 100%; max-width: 200px; opacity: .8; transition: opacity .2s; }
+.trust__list li:hover { opacity: 1; }
+.trust__list img { width: 100%; height: auto; }
+@media (max-width: 1000px) { .trust__list { grid-template-columns: repeat(4, 1fr); max-width: 760px; } }
+@media (max-width: 620px)  { .trust__list { grid-template-columns: repeat(3, 1fr); gap: 0 6px; } }
 
 /* ---------- Secciones ---------- */
 .section { padding: clamp(72px, 10vw, 128px) 0; }
